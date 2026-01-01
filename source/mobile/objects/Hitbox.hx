@@ -251,3 +251,4 @@ class Hitbox extends MobileInputManager implements IMobileControls
 
 		return FlxG.bitmap.add(bitmap);
 	}
+}
