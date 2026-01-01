@@ -204,10 +204,10 @@ class Hitbox extends MobileInputManager implements IMobileControls
 	function createHintGraphic(Width:Int, Height:Int, ?isLane:Bool = false):FlxGraphic
 	{
 		var shape:Shape = new Shape();
-		shape.graphics.beginFill(0xFFFFFF);
 
 		if (ClientPrefs.data.hitboxType == "No Gradient")
 		{
+			shape.graphics.beginFill(0xFFFFFF);
 			var matrix:Matrix = new Matrix();
 			matrix.createGradientBox(Width, Height, 0, 0, 0);
 
@@ -224,17 +224,24 @@ class Hitbox extends MobileInputManager implements IMobileControls
 			shape.graphics.drawRect(0, 0, Width, Height);
 			shape.graphics.endFill();
 		}
-		else // if (ClientPrefs.data.hitboxType == 'Gradient')
+		else if (ClientPrefs.data.hitboxType == "Classic")
+		{
+			shape.graphics.lineStyle(5, 0xFFFFFF, 1);
+			shape.graphics.drawRect(0, 0, Width, Height);
+			shape.graphics.endFill();
+		}
+		else
 		{
 			shape.graphics.lineStyle(3, 0xFFFFFF, 1);
 			shape.graphics.drawRect(0, 0, Width, Height);
 			shape.graphics.lineStyle(0, 0, 0);
 			shape.graphics.drawRect(3, 3, Width - 6, Height - 6);
-			shape.graphics.endFill();
+			
 			if (isLane)
 				shape.graphics.beginFill(0xFFFFFF);
 			else
 				shape.graphics.beginGradientFill(RADIAL, [0xFFFFFF, FlxColor.TRANSPARENT], [1, 0], [0, 255], null, null, null, 0.5);
+			
 			shape.graphics.drawRect(3, 3, Width - 6, Height - 6);
 			shape.graphics.endFill();
 		}
@@ -244,4 +251,3 @@ class Hitbox extends MobileInputManager implements IMobileControls
 
 		return FlxG.bitmap.add(bitmap);
 	}
-}
