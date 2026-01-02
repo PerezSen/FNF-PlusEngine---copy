@@ -97,10 +97,20 @@ class ABotSpeaker extends FlxSpriteGroup
 		levelMax = 0;
 		for (i in 0...Std.int(Math.min(vizSprites.length, levels.length)))
 		{
-			var animFrame:Int = Math.round(levels[i].value * 5);
+			var animFrame:Int = Math.round(levels[i].value * 6);
 			vizSprites[i].visible = animFrame > 0;
+			animFrame -= 1;
+			
 			animFrame = Std.int(Math.abs(FlxMath.bound(animFrame, 0, 5) - 5)); // shitty dumbass flip, cuz dave got da shit backwards lol!
+
+			animFrame = Math.floor(Math.min(5, animFrame));
+            animFrame = Math.floor(Math.max(0, animFrame));
+			
+			animFrame = Std.int(Math.abs(animFrame - 5));
+
+			
 			vizSprites[i].animation.curAnim.curFrame = animFrame;
+			
 			levelMax = Std.int(Math.max(levelMax, 5 - animFrame));
 		}
 
