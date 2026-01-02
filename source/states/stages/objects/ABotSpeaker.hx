@@ -55,6 +55,7 @@ class ABotSpeaker extends FlxSpriteGroup
 			viz.animation.play('VIZ', true);
 			viz.animation.curAnim.finish(); //make it go to the lowest point
 			viz.antialiasing = antialias;
+			viz.visible = false;
 			vizSprites.push(viz);
 			viz.updateHitbox();
 			viz.centerOffsets();
@@ -97,9 +98,8 @@ class ABotSpeaker extends FlxSpriteGroup
 		for (i in 0...Std.int(Math.min(vizSprites.length, levels.length)))
 		{
 			var animFrame:Int = Math.round(levels[i].value * 5);
-			animFrame = Std.int(Math.abs(FlxMath.bound(animFrame, 0, 5) - 5)); // shitty dumbass flip, cuz dave got da shit backwards lol!
-			
 			vizSprites[i].visible = animFrame > 0;
+			animFrame = Std.int(Math.abs(FlxMath.bound(animFrame, 0, 5) - 5)); // shitty dumbass flip, cuz dave got da shit backwards lol!
 			vizSprites[i].animation.curAnim.curFrame = animFrame;
 			levelMax = Std.int(Math.max(levelMax, 5 - animFrame));
 		}
