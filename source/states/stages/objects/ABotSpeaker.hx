@@ -100,9 +100,7 @@ class ABotSpeaker extends FlxSpriteGroup
 			var animFrame:Int = Math.round(levels[i].value * 6);
 			vizSprites[i].visible = animFrame > 0;
 			animFrame -= 1;
-			
-			animFrame = Std.int(Math.abs(FlxMath.bound(animFrame, 0, 5) - 5)); // shitty dumbass flip, cuz dave got da shit backwards lol!
-
+	
 			animFrame = Math.floor(Math.min(5, animFrame));
             animFrame = Math.floor(Math.max(0, animFrame));
 			
@@ -136,6 +134,7 @@ class ABotSpeaker extends FlxSpriteGroup
 	    analyzer.minDb = -65;
         analyzer.maxDb = -25;
         analyzer.maxFreq = 22000;
+		analyzer.minFreq = 10;
 		#if !web
 		// On native it uses FFT stuff that isn't as optimized as the direct browser stuff we use on HTML5
 		// So we want to manually change it!
