@@ -37,7 +37,7 @@ jobs:
           sudo apt-get install libvlccore-dev
           haxelib setup ~/haxelib
           haxelib install hxcpp > /dev/null --quiet
-          haxelib git hscript-improved https://github.com/fponticelli/hscript-improved
+          haxelib git hscript-improved https://github.com/nebulazorua/hscript-improved
           chmod +x ./setup/unish-lib.sh
           sh ./setup/unish-lib.sh
       - name: Skip SScript setup mode
@@ -71,7 +71,7 @@ jobs:
         run: |
           haxelib setup C:/haxelib
           haxelib install hxcpp > /dev/null --quiet
-          haxelib git hscript-improved https://github.com/fponticelli/hscript-improved
+          haxelib git hscript-improved https://github.com/nebulazorua/hscript-improved
           .\"setup/windows-lib.bat"
         shell: cmd
       - name: Skip SScript setup mode
@@ -105,7 +105,7 @@ jobs:
       - name: Install Haxelib
         run: |
           haxelib setup ~/haxelib
-          haxelib git hscript-improved https://github.com/fponticelli/hscript-improved
+          haxelib git hscript-improved https://github.com/nebulazorua/hscript-improved
           chmod +x ./setup/unish-lib.sh
           sh ./setup/unish-lib.sh
       - name: Skip SScript setup mode
@@ -154,7 +154,7 @@ jobs:
         run: |
           haxelib setup ~/haxelib
           haxelib install hxcpp > /dev/null --quiet
-          haxelib git hscript-improved https://github.com/fponticelli/hscript-improved
+          haxelib git hscript-improved https://github.com/nebulazorua/hscript-improved
           chmod +x ./setup/unish-lib.sh
           sh ./setup/unish-lib.sh
       
@@ -204,7 +204,7 @@ jobs:
       - name: Install Haxelib
         run: |
           haxelib setup ~/haxelib
-          haxelib git hscript-improved https://github.com/fponticelli/hscript-improved
+          haxelib git hscript-improved https://github.com/nebulazorua/hscript-improved
           chmod +x ./setup/unish-lib.sh
           sh ./setup/unish-lib.sh
       
