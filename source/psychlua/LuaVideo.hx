@@ -1,7 +1,5 @@
 package psychlua;
 
-package psychlua;
-
 #if VIDEOS_ALLOWED
 import hxvlc.flixel.FlxVideoSprite;
 import objects.SmoothVideoSprite;
