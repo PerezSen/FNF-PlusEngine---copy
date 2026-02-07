@@ -1,9 +1,11 @@
 package psychlua;
 
+package psychlua;
+
 #if VIDEOS_ALLOWED
 import hxvlc.flixel.FlxVideoSprite;
+import objects.SmoothVideoSprite;
 #end
-
 class LuaVideo {
     #if LUA_ALLOWED
     private static var activeVideos:Map<String, FlxVideoSprite> = new Map();
@@ -36,7 +38,7 @@ class LuaVideo {
             isDestroyed.set(tag, false);
             allowDestroy.set(tag, false);
             
-            var videoSprite:FlxVideoSprite = new FlxVideoSprite();
+            var videoSprite:SmoothVideoSprite = new SmoothVideoSprite();
             videoSprite.antialiasing = ClientPrefs.data.antialiasing;
             
             videoSprite.cameras = [PlayState.instance.camHUD];
