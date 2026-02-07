@@ -1,9 +1,9 @@
 package lenin.slushithings.codenameengine.scripting;
 
 import haxe.io.Path;
-import _hscript.Interp;
-import _hscript.Parser;
-import _hscript.Expr;
+import hscript.Interp;
+import hscript.Parser;
+import hscript.Expr;
 #if sys
 import sys.io.File;
 import sys.FileSystem;
