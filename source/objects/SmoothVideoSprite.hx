@@ -15,7 +15,6 @@ class VideoSmootherShader extends FlxShader {
             vec2 uv = openfl_TextureCoordv;
             vec4 c = flixel_texture2D(bitmap, uv);
             vec4 p = texture2D(prevTexture, uv);
-            // Si el frame anterior es totalmente transparente (vacío), no mezclar
             if (p.a < 0.1) {
                 gl_FragColor = c;
             } else {
