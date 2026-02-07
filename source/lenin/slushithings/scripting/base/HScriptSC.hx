@@ -1,8 +1,8 @@
 package lenin.slushithings.scripting.base;
 
-import _hscript.Interp;
-import _hscript.Parser;
-import _hscript.Expr;
+import hscript.Interp;
+import hscript.Parser;
+import hscript.Expr;
 import haxe.io.Path;
 #if sys
 import sys.io.File;
