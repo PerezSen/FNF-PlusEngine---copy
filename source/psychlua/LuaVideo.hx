@@ -38,7 +38,7 @@ class LuaVideo {
             isDestroyed.set(tag, false);
             allowDestroy.set(tag, false);
             
-            var videoSprite:SmoothVideoSprite = new SmoothVideoSprite();
+            var videoSprite:SmoothVideoSprite = new SmoothVideoSprite(); 
             videoSprite.antialiasing = ClientPrefs.data.antialiasing;
             
             videoSprite.cameras = [PlayState.instance.camHUD];
